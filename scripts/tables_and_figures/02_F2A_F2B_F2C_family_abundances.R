@@ -103,14 +103,14 @@ ligation_driversity_data <- ligation_driversity_data[,c("run_name","rate","error
 coeff <- 0.05/max(ligation_driversity_data$diversity)
 
 # setup axis title
-axis_title <- bquote(italic("k")[obs])
+axis_title <- bquote(italic('k')[obs](h^-1))
 
 # combined line plot of ligation rates with diversity
 ligation_rates_diversity <- ggplot(ligation_driversity_data, aes(run_name)) +
   geom_line(aes(y = diversity), size = 1.25, color = safe_colors[15]) +
-  geom_point(aes(y = diversity), size = 2.25, color = safe_colors[15]) +
+  geom_point(aes(y = diversity), size = 2.75, color = safe_colors[15]) +
   geom_line(aes(y = rate/coeff), size = 1.25, color = safe_colors[2]) + 
-  geom_point(aes(y = rate/coeff), size = 2.25, color = safe_colors[2]) +
+  geom_point(aes(y = rate/coeff), size = 2.75, color = safe_colors[2]) +
   geom_errorbar(aes(ymin=(rate-error)/coeff, ymax=(rate+error)/coeff), width=.2,
                 position=position_dodge(0.05), color = safe_colors[2]) +
   theme_classic(base_size = 16) +
@@ -130,7 +130,7 @@ dev.off()
 # line plot with percent abundance per round for each of the families
 cluster_abundances_plot <- ggplot(data=cluster_data, aes(x=as.character(run_name), y=read_abun, group=family_ID, color=cluster_color))+
   geom_line(size = 1.25) +
-  geom_point(size = 2.25) +
+  geom_point(size = 2.75) +
   theme_classic(base_size = 16) +
   scale_color_identity(name = "Family", labels = cluster_data$family_ID, breaks = cluster_data$cluster_color, guide = "legend") +
   scale_y_continuous(limits=c(0, 40), breaks=seq(0, 40, 5)) +#, labels = function(x) paste0(x, "%")) +
@@ -216,7 +216,7 @@ identity_table_subset <- identity_table_subset[order(identity_table_subset$famil
 # line plot with average identity per round for each of the families
 family_identities_subset_plot <- ggplot(data=identity_table_subset, aes(x=as.character(run_num), y=avg_identity, group=family_ID, color=family_color))+
   geom_line(size = 1.25) +
-  geom_point(size = 2.25) +
+  geom_point(size = 2.75) +
   geom_point() +
   theme_classic(base_size = 16) +
   scale_color_identity(name = "Family", labels = identity_table_subset$family_ID, breaks = identity_table_subset$family_color, guide = "legend") +

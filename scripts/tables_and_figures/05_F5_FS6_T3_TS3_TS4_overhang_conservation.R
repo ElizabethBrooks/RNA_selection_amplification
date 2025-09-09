@@ -183,7 +183,7 @@ complement_counts_total$tag <- factor(complement_counts_total$tag, levels = c("8
 # create line plot of total overhang identity percent
 base_abun_plot <- ggplot(data=complement_counts_total, aes(x=as.character(run_name), y=perc_abundance, group=tag, color=colors))+
   geom_line(size = 1.25) +
-  geom_point(size = 2.25) +
+  geom_point(size = 2.75) +
   theme_classic(base_size = 16) +
   scale_color_identity(name = "Complementarity", labels = complement_counts_total$tag, breaks = complement_counts_total$colors, guide = "legend") +
   scale_y_continuous(limits=c(0, 70), breaks=seq(0, 70, 10)) +
