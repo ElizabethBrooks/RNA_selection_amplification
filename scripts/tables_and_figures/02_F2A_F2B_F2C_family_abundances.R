@@ -107,23 +107,24 @@ axis_title <- bquote(italic('k')[obs](h^-1))
 
 # combined line plot of ligation rates with diversity
 ligation_rates_diversity <- ggplot(ligation_driversity_data, aes(run_name)) +
-  geom_line(aes(y = diversity), size = 1.25, color = safe_colors[15]) +
+  geom_line(aes(y = diversity, linetype = "Diversity"), size = 1.25, color = safe_colors[15]) +
   geom_point(aes(y = diversity), size = 2.75, color = safe_colors[15]) +
-  geom_line(aes(y = rate/coeff), size = 1.25, color = safe_colors[2]) + 
+  geom_line(aes(y = rate/coeff, linetype = "Activity"), size = 1.25, color = safe_colors[2]) + 
   geom_point(aes(y = rate/coeff), size = 2.75, color = safe_colors[2]) +
   geom_errorbar(aes(ymin=(rate-error)/coeff, ymax=(rate+error)/coeff), width=.2,
                 position=position_dodge(0.05), color = safe_colors[2]) +
   theme_classic(base_size = 16) +
   guides(y = guide_axis(cap = "upper")) +
   scale_y_continuous(
-    name = "Percent Diversity", breaks=seq(0, 100, 20),# labels = function(x) paste0(x, "%"),
+    name = "Percent Unique", breaks=seq(0, 100, 20),# labels = function(x) paste0(x, "%"),
     sec.axis = sec_axis(~.*coeff, name=axis_title, guide = guide_axis(cap = "upper"))
   ) +
   scale_x_continuous("Round", labels = as.character(ligation_driversity_data$run_name), breaks = ligation_driversity_data$run_name) +
-  xlab("Round")
+  xlab("Round") +
+  scale_linetype_manual(values=c("solid", "solid"), name = "Statistic")
 # save the plot
 exportFile <- paste(out_dir, "/sequence_diversity_ligation_rates.png", sep = "")
-png(exportFile, units="in", width=5, height=4, res=300)
+png(exportFile, units="in", width=6, height=4, res=300)
 print(ligation_rates_diversity)
 dev.off()
 
@@ -214,7 +215,7 @@ identity_table_subset <- filter(identity_table, avg_identity > 0, min_identity >
 identity_table_subset <- identity_table_subset[order(identity_table_subset$family_ID, decreasing = FALSE),]  
 
 # line plot with average identity per round for each of the families
-family_identities_subset_plot <- ggplot(data=identity_table_subset, aes(x=as.character(run_num), y=avg_identity, group=family_ID, color=family_color))+
+family_identities_subset_plot <- ggplot(data=identity_table_subset, aes(x=as.character(run_num), y=100-avg_identity, group=family_ID, color=family_color))+
   geom_line(size = 1.25) +
   geom_point(size = 2.75) +
   geom_point() +
@@ -222,7 +223,7 @@ family_identities_subset_plot <- ggplot(data=identity_table_subset, aes(x=as.cha
   scale_color_identity(name = "Family", labels = identity_table_subset$family_ID, breaks = identity_table_subset$family_color, guide = "legend") +
   #scale_y_continuous(labels = function(x) paste0(x, "%")) +
   guides(y = guide_axis(cap = "upper"), x = guide_axis(cap = "upper")) +
-  ylab("Percent Identity") +
+  ylab("Percent Unique") +
   xlab("Round")
 # save the plot
 exportFile <- paste(out_dir, "/persistent_family_avg_identities.png", sep = "")

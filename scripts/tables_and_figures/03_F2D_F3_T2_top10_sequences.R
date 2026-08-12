@@ -12,6 +12,7 @@ library(scales)
 library(rcartocolor)
 library(dplyr)
 library(ComplexHeatmap)
+library(stringr)
 # https://jokergoo.github.io/ComplexHeatmap-reference/book/upset-plot.html
 
 # supress cowplot package messages
@@ -298,7 +299,7 @@ seqs_counts_ranked_subset <- seqs_counts_ranked[seqs_counts_ranked$rank_ID %in% 
 #for (rank_num in 1:nrow(sequence_ranks_subset)) {
 #  seqs_counts_ranked_subset[seqs_counts_ranked_subset$sequence == sequence_ranks_subset$sequence[rank_num], "rank_color"] <- safe_colors[rank_num]
 #}
-counts_plot_ranked <- ggplot(data=seqs_counts_ranked_subset, aes(x=as.character(counts_run_name), y=read_abun, group=rank_ID, color=rank_color))+
+counts_plot_ranked_subset <- ggplot(data=seqs_counts_ranked_subset, aes(x=as.character(counts_run_name), y=read_abun, group=rank_ID, color=rank_color))+
   geom_line(size = 1.25) +
   geom_point(size = 2.25) +
   geom_point() +
@@ -311,8 +312,22 @@ counts_plot_ranked <- ggplot(data=seqs_counts_ranked_subset, aes(x=as.character(
 # save the plot
 exportFile <- paste(out_dir, "/ranked_sequences_non_family_percent_abundances.png", sep = "")
 png(exportFile, units="in", width=5, height=4, res=300)
-print(counts_plot_ranked)
+print(counts_plot_ranked_subset)
 dev.off()
+
+# add ranks
+#seqs_counts_ranked$rank <- str_split_fixed(seqs_counts_ranked$rank_ID, "_", 2)[,2]
+#seqs_counts_ranked[seqs_counts_ranked$read_abun == 0,]$read_abun <- NA
+
+#counts_plot_ranked <- ggplot(data = seqs_counts_ranked, aes(x = counts_run_name, y = rank, group = rank_ID)) +
+#  geom_line(aes(color = rank_ID, alpha = 1), size = 2) +
+#  geom_point(aes(color = rank_ID, alpha = 1), size = 4) #+
+  #scale_y_reverse(breaks = 1:nrow(seqs_counts_ranked))
+# save the plot
+#exportFile <- paste(out_dir, "/ranked_sequences_non_family_percent_abundances.png", sep = "")
+#png(exportFile, units="in", width=5, height=4, res=300)
+#print(counts_plot_ranked)
+#dev.off()
 
 # export plotting data
 write.csv(seqs_counts_ranked, file = paste(out_dir, "/ranked_sequences_abundances.csv", sep = ""), row.names = FALSE, quote = FALSE)

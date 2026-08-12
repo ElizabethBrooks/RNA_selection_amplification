@@ -2,6 +2,8 @@
 
 Project for analyzing RNA sequences from in vitro selection-amplification to isolate RNA ligase ribozyme.
 
+The scripts for the following workflow can be found [HERE](https://github.com/ElizabethBrooks/RNA_selection_amplification).
+
 ### Data Analysis Workflow Steps
 
 | Step | Description | Script | Directory | Input Data |
