@@ -3,6 +3,8 @@
 #$ -N RNA_quantify_b_jobOutput
 #$ -q largemem
 
+# created by: Elizabeth Brooks
+
 # script to count the number of sequences shared across runs
 # usage: qsub 09a_quantify.sh inputRun runName
 # usage ex: bash 09a_quantify.sh r8_S8_L001 r8_S8_L001

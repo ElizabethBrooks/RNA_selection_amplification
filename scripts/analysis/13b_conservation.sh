@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# created by: Elizabeth Brooks
+
 # script to run job scripts that identify conserved regions
 # usage: bash 13b_conservation.sh
 ## test_23May2025

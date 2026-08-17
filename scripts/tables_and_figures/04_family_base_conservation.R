@@ -1,5 +1,7 @@
 #!/usr/bin/env Rscript
 
+# created by: Elizabeth Brooks
+
 # R script to create family base conservation plots
 # usage: 04_F4A_family_base_conservation.R
 

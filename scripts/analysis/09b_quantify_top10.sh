@@ -3,6 +3,8 @@
 #$ -N RNA_quantify_d_jobOutput
 #$ -q largemem
 
+# created by: Elizabeth Brooks
+
 # script to count the number of sequences shared across the top 10 sequences for the runs
 # usage: qsub 09b_quantify_top10.sh inputRun
 # usage ex: bash 09b_quantify_top10.sh r8_S8_L001

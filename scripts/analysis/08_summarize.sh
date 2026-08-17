@@ -3,6 +3,8 @@
 #$ -N RNA_summarize_jobOutput
 #$ -q largemem
 
+# created by: Elizabeth Brooks
+
 # script to summarize clustering information
 # usage: qsub 08_summarize.sh sampleTag
 # usage ex: bash 08_summarize.sh r8_S8_L001

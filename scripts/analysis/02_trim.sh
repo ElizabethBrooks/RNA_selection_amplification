@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# created by: Elizabeth Brooks
+
 # script to perform trimmomatic trimming of paired end reads
 # usage: bash 02_trim.sh 
 

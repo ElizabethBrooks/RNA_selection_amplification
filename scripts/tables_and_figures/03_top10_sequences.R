@@ -1,5 +1,7 @@
 #!/usr/bin/env Rscript
 
+# created by: Elizabeth Brooks
+
 # R script to create top 10 sequence abundance plots
 # usage: 03_F2D_F3_T2_top10_sequences.R
 

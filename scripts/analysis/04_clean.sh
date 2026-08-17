@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# created by: Elizabeth Brooks
+
 # script to clean reads and keep only the variable 40bp region
 # usage: bash 04_clean.sh
 

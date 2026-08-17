@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# created by: Elizabeth Brooks
+
 # script to combine files of trimmed forward paired reads with trimmed forward unpaired reads with merged reads
 # usage: bash 05_combine.sh
 

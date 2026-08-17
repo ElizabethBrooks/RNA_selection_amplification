@@ -1,5 +1,7 @@
 #!/usr/bin/env Rscript
 
+# created by: Elizabeth Brooks
+
 # R script to create overhang conservation plots
 # usage: 05_F5_FS6_T3_TS3_TS4_overhang_conservation.R
 

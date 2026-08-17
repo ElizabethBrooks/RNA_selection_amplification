@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# created by: Elizabeth Brooks
+
 # script to perform CD-Hit clustering of RNA sequence data
 # usage: bash 07_cluster.sh
 

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# created by: Elizabeth Brooks
+
 # script to filter reads and keep sequences with matching up- and down-stream sequences
 # usage: bash 03_filter.sh
 

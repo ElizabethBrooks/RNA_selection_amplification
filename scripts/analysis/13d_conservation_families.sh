@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# created by: Elizabeth Brooks
+
 # script to run job scripts that identify conserved regions
 # usage: bash 13d_conservation_families.sh
 

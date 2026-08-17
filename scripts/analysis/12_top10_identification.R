@@ -1,5 +1,7 @@
 #!/usr/bin/env Rscript
 
+# created by: Elizabeth Brooks
+
 # R script to identifiy the top 10 most abundant sequneces
 # and their similarity to the peak sequences
 

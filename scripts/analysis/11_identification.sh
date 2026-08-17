@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# created by: Elizabeth Brooks
+
 # script to run job scripts that count the number of sequences in sequence families
 # usage: bash 11_identification.sh
 

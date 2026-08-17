@@ -3,6 +3,8 @@
 #$ -N RNA_conserved_r0_jobOutput
 #$ -q largemem
 
+# created by: Elizabeth Brooks
+
 # script to run job scripts that identify conserved regions
 # usage: qsub 13e_conservation_r0.sh runNum
 # usage ex: qsub 13e_conservation_r0.sh 1

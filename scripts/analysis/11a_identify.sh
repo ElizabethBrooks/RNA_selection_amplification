@@ -3,6 +3,8 @@
 #$ -N RNA_identify_jobOutput
 #$ -q largemem
 
+# created by: Elizabeth Brooks
+
 # script to run R scripts that count the number of sequences in sequence families
 # usage: qsub 11a_identify.sh roundNum outDir peaksFile seqsFile
 

@@ -1,5 +1,7 @@
 #!/usr/bin/env Rscript
 
+# created by: Elizabeth Brooks
+
 # R script to create family abundance plots
 # usage: 02_F2A_F2B_F2C_family_abundances.R
 

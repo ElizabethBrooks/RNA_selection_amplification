@@ -1,4 +1,7 @@
 #!/usr/bin/env Rscript
+
+# created by: Elizabeth Brooks
+
 args = commandArgs(trailingOnly=TRUE)
 
 # R script to identify sequence families

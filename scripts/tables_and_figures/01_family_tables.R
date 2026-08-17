@@ -1,5 +1,7 @@
 #!/usr/bin/env Rscript
 
+# created by: Elizabeth Brooks
+
 # R script to create family data tables for plotting
 # usage: 01_ST2_family_tables.R
 

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# created by: Elizabeth Brooks
+
 # script to perform fastqc quality control of paired end reads
 # usage: bash 00a_qc.sh analysisType
 # usage ex: bash 00a_qc.sh raw

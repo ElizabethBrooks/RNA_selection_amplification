@@ -1,5 +1,7 @@
 #!/usr/bin/env Rscript
 
+# created by: Elizabeth Brooks
+
 # R script to create analysis plots for the RNA evolution project
 
 # turn of scientific notation

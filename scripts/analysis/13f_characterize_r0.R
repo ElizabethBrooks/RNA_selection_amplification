@@ -1,5 +1,7 @@
 #!/usr/bin/env Rscript
 
+# created by: Elizabeth Brooks
+
 # R script to characterize the round 0 sequences
 
 # turn of scientific notation

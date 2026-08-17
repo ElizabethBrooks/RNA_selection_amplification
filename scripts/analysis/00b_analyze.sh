@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# created by: Elizabeth Brooks
+
 # script to filter fastq files and keep sequences with matching up- and down-stream sequences
 # usage: bash 00b_analyze.sh analysisType
 # usage ex: bash 00b_analyze.sh 01_merged

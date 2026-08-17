@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# created by: Elizabeth Brooks
+
 # script to subset sequences and format headers
 # usage: bash 06_format.sh
 
