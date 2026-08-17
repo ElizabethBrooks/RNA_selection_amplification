@@ -19,7 +19,8 @@ library(stringr)
 suppressMessages( require(cowplot) )
 
 # set outputs directory
-out_dir <- "/Users/bamflappy/PfrenderLab/RNA_evolution/outputs/tables_and_figures/F2D_F3_T2_top10_sequences_above2"
+out_dir <- "/Users/bamflappy/PfrenderLab/RNA_evolution/outputs/tables_and_figures/F2D_F3_T2_top10_sequences_above2_log10"
+#out_dir <- "/Users/bamflappy/PfrenderLab/RNA_evolution/outputs/tables_and_figures/F2D_F3_T2_top10_sequences_above2"
 #out_dir <- "/Users/bamflappy/PfrenderLab/RNA_evolution/outputs/tables_and_figures/F2D_F3_T2_top10_sequences_all"
 
 # create outputs directory
@@ -56,7 +57,8 @@ seqs_counts[seqs_counts$counts < 3,"counts"] <- 0
 #}
 
 # add log values
-seqs_counts$log_counts <- log(seqs_counts$counts)
+seqs_counts$log_counts <- log10(seqs_counts$counts)
+#seqs_counts$log_counts <- log(seqs_counts$counts)
 #seqs_counts$log_frac_abundance <- log(seqs_counts$frac_abundance)
 
 # add percent abundance
